@@ -25,17 +25,32 @@
     @include breakpoint(large) {
       width: var(--form-width);
     }
+
+    .form__wrapper {
+      width: min(100%, rem(320));
+
+      .text-error {
+        display: none;
+        margin-block-start: rem(8);
+        color: var(--color-red-500);
+      }
+    }
   }
 
   &__email {
-    width: min(100%, rem(320));
+    width: 100%;
     height: rem(48);
     padding: rem(12);
-    border: none;
+    border: rem(2) solid transparent;
     border-radius: rem(6);
 
-    // &:invalid {
-    //   border: rem(2) solid var(--color-red-500);
-    // }
+    &.invalid {
+      outline: none;
+      border-color: var(--color-red-500);
+
+      & + .text-error {
+        display: inline-block;
+      }
+    }
   }
 }

@@ -20,8 +20,8 @@
       referrerpolicy="no-referrer"
     />
     
-    <script type="module" crossorigin src="./assets/index.fe72f982.js"></script>
-    <link rel="stylesheet" href="./assets/index.ed3d65d3.css">
+    <script type="module" crossorigin src="./assets/index.576613b8.js"></script>
+    <link rel="stylesheet" href="./assets/index.a3407da1.css">
   </head>
   <body>
     <header>
@@ -1680,9 +1680,12 @@
               To recieve tips on how to grow your community, sign up to our weekly newsletter. We’ll never send you spam or pass on your email address
             </p>
           </div>
-          <form class="newsletter__form" action="./">
-            <input class="newsletter__email" type="email" name="email" aria-label="Email" />
-            <button class="button--subscribe" type="submit">Subscribe</button>
+          <form class="newsletter__form" data-js="form" action="./" novalidate>
+            <div class="form__wrapper">
+              <input class="newsletter__email" data-js="inp-email" type="email" name="email" aria-label="Email" autocomplete="off" />
+              <span class="text-error">Check your email please</span>
+            </div>
+            <button class="button--subscribe" data-js="btn-submit" type="submit">Subscribe</button>
           </form>
         </section>
 
