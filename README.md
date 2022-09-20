@@ -37,6 +37,7 @@ This is a solution to the [Huddle landing page with curved sections challenge on
 - CSS Flex
 - Pure JS
 - SASS-SCSS
+- Vite
 
 ## Author
 
