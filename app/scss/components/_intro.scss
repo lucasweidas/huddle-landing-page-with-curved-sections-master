@@ -1,0 +1,75 @@
+@use '../abstracts' as *;
+
+.intro {
+  padding-inline: var(--container-padding-inline-md);
+
+  @include breakpoint(medium) {
+    margin-block-end: rem(128);
+  }
+
+  &__main {
+    .text-wrapper {
+      width: min(100%, rem(500));
+    }
+
+    .paragraph {
+      margin-block-start: rem(20);
+    }
+
+    .button--get-started {
+      margin-block-start: rem(44);
+    }
+  }
+
+  &__image {
+    width: min(100%, rem(296));
+    margin: rem(100) auto rem(120);
+
+    @include breakpoint(medium) {
+      width: min(100%, rem(540));
+      margin-block: rem(120) rem(128);
+    }
+
+    @include breakpoint(large) {
+      width: clamp(rem(850), 90%, rem(1020));
+    }
+  }
+
+  &__wrapper {
+    width: min(100%, rem(880));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: rem(98);
+    margin-inline: auto;
+
+    @include breakpoint(medium) {
+      flex-direction: row;
+    }
+
+    @include breakpoint(large) {
+      justify-content: space-between;
+    }
+  }
+
+  &__card {
+    width: fit-content;
+
+    .icon-communities {
+      width: rem(29);
+
+      @include breakpoint(medium) {
+        width: rem(48);
+      }
+    }
+
+    .icon-messages {
+      width: rem(23);
+
+      @include breakpoint(medium) {
+        width: rem(40);
+      }
+    }
+  }
+}

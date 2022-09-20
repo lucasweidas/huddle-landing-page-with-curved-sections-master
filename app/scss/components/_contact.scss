@@ -1,0 +1,64 @@
+@use '../abstracts' as *;
+
+.contact {
+  width: min(100%, rem(340));
+  display: grid;
+  row-gap: rem(48);
+
+  @include breakpoint(large) {
+    row-gap: rem(28);
+  }
+
+  .logo {
+    width: rem(200);
+  }
+
+  .paragraph--white {
+    margin-block-start: rem(16);
+
+    @include breakpoint(medium) {
+      margin-block-start: rem(24);
+    }
+  }
+
+  &__sac {
+    display: grid;
+    row-gap: rem(18);
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: rem(18);
+  }
+
+  &__socials {
+    @include breakpoint(large) {
+      margin-block-start: rem(40);
+    }
+  }
+
+  &__icon-link {
+    font-size: rem(24);
+    color: var(--color-blue-100);
+    transition: color var(--duration-1) ease;
+
+    @include breakpoint(medium) {
+      font-size: rem(32);
+    }
+
+    &:is(:hover, :focus-visible) {
+      &.facebook-icon {
+        color: var(--color-hover-facebook);
+      }
+
+      &.instagram-icon {
+        color: var(--color-hover-instagram);
+      }
+
+      &.twitter-icon {
+        color: var(--color-hover-twitter);
+      }
+    }
+  }
+}

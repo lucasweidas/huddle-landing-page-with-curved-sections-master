@@ -1,0 +1,50 @@
+@use '../abstracts' as *;
+
+.footer {
+  padding-inline: var(--container-padding-inline-md);
+  margin-block-start: rem(220);
+
+  @include breakpoint(medium) {
+    margin-block-start: rem(178);
+  }
+
+  @include breakpoint(medium) {
+    margin-block-start: rem(200);
+  }
+
+  @include wave-border {
+    --bg-top-height: 3.313rem;
+    --bg-top-url: url('../images/bg-footer-top-mobile.svg');
+    --bg-bottom-height: 0;
+    --bg-bottom-url: none;
+    --bg-color: var(--color-cyan-900);
+
+    @include breakpoint(medium) {
+      --bg-top-height: 9.875rem;
+      --bg-top-url: url('../images/bg-footer-top-desktop.svg');
+    }
+  }
+
+  &__container {
+    width: min(100%, var(--container-max-width-md));
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(100);
+    padding-block: rem(64) rem(44);
+    margin-inline: auto;
+
+    @include breakpoint(medium) {
+      padding-block: rem(80) rem(56);
+    }
+
+    @include breakpoint(large) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      padding-block: rem(120) rem(104);
+    }
+  }
+
+  .text-wrapper {
+    width: min(100%, rem(340));
+  }
+}

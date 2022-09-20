@@ -1,0 +1,89 @@
+@use '../abstracts' as *;
+
+.sect-content {
+  padding-inline: var(--container-padding-inline-sm);
+
+  &--top,
+  &--middle,
+  &--bottom {
+    @extend .sect-content;
+  }
+
+  &--top {
+    @include wave-border {
+      --bg-top-height: 7rem;
+      --bg-top-url: url('../images/bg-section-top-mobile-1.svg');
+      --bg-bottom-height: 3.25rem;
+      --bg-bottom-url: url('../images/bg-section-bottom-mobile-1.svg');
+      --bg-color: var(--color-blue-100);
+
+      @include breakpoint(medium) {
+        --bg-top-height: 10.313rem;
+        --bg-top-url: url('../images/bg-section-top-desktop-1.svg');
+        --bg-bottom-height: 8.688rem;
+        --bg-bottom-url: url('../images/bg-section-bottom-desktop-1.svg');
+      }
+    }
+  }
+
+  &--middle {
+    margin-block: rem(48);
+  }
+
+  &--bottom {
+    @include wave-border {
+      --bg-top-height: 6.438rem;
+      --bg-top-url: url('../images/bg-section-top-mobile-2.svg');
+      --bg-bottom-height: 6.313rem;
+      --bg-bottom-url: url('../images/bg-section-bottom-mobile-2.svg');
+      --bg-color: var(--color-blue-100);
+
+      @include breakpoint(medium) {
+        --bg-top-height: 9.75rem;
+        --bg-top-url: url('../images/bg-section-top-desktop-2.svg');
+        --bg-bottom-height: 8.688rem;
+        --bg-bottom-url: url('../images/bg-section-bottom-desktop-2.svg');
+      }
+    }
+  }
+
+  &__container {
+    width: min(100%, var(--container-max-width-md));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(72);
+    padding-block: rem(64);
+    margin-inline: auto;
+
+    @include breakpoint(large) {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: start;
+
+      :is(.sect-content--top, .sect-content--bottom) & {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__image {
+    width: min(100%, rem(260));
+
+    @include breakpoint(medium) {
+      width: min(100%, rem(400));
+    }
+
+    @include breakpoint(medium) {
+      width: min(100%, rem(530));
+    }
+  }
+
+  &__wrapper {
+    width: min(100%, rem(540));
+  }
+
+  .paragraph {
+    margin-block-start: rem(16);
+  }
+}

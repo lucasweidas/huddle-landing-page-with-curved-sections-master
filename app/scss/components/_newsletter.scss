@@ -1,0 +1,41 @@
+@use '../abstracts' as *;
+
+.newsletter {
+  width: min(100%, rem(520));
+
+  .paragraph--white {
+    margin-block-start: rem(16);
+  }
+
+  &__form {
+    --form-gap: 2rem;
+    --form-width: 20rem;
+    width: min(100%, var(--form-width));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: rem(16) var(--form-gap);
+    margin-block-start: var(--form-gap);
+    justify-self: center;
+
+    @include breakpoint(medium) {
+      --form-width: 32rem;
+    }
+
+    @include breakpoint(large) {
+      width: var(--form-width);
+    }
+  }
+
+  &__email {
+    width: min(100%, rem(320));
+    height: rem(48);
+    padding: rem(12);
+    border: none;
+    border-radius: rem(6);
+
+    // &:invalid {
+    //   border: rem(2) solid var(--color-red-500);
+    // }
+  }
+}

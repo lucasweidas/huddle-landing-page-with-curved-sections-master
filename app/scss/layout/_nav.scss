@@ -1,0 +1,18 @@
+@use '../abstracts' as *;
+
+.nav {
+  width: min(100%, var(--container-max-width-lg));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: rem(24) var(--container-padding-inline-sm) 0;
+  margin-inline: auto;
+
+  @include breakpoint(medium) {
+    padding-block-start: rem(60);
+  }
+
+  @include breakpoint(large) {
+    padding-block-start: rem(78);
+  }
+}

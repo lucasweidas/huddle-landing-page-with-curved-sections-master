@@ -1,0 +1,88 @@
+@use '../abstracts' as *;
+
+:root {
+  --font-poppins: 'Poppins', sans-serif;
+  --font-open-sans: 'Open Sans', sans-serif;
+  --font-size-body: 0.875rem;
+}
+
+body {
+  font-family: var(--font-open-sans);
+  font-size: var(--font-size-body);
+}
+
+.heading {
+  font-family: var(--font-poppins);
+  color: var(--color-cyan-900);
+  line-height: 1.5;
+
+  &--1 {
+    @extend .heading;
+    font-size: rem(26);
+    font-weight: 700;
+
+    @include breakpoint(medium) {
+      font-size: rem(44);
+    }
+  }
+
+  &--2 {
+    @extend .heading;
+    font-size: rem(20);
+
+    @include breakpoint(medium) {
+      font-size: rem(38);
+    }
+  }
+
+  &--xxl {
+    @extend .heading;
+    font-family: var(--font-open-sans);
+    font-size: rem(60);
+    font-weight: 700;
+
+    @include breakpoint(medium) {
+      font-size: rem(88);
+    }
+  }
+
+  &--uppercase {
+    @extend .heading;
+    font-size: rem(24);
+    font-weight: 500;
+    color: var(--color-blue-100);
+    text-transform: uppercase;
+  }
+}
+
+.paragraph {
+  font-size: rem(14);
+  font-weight: 600;
+  color: var(--color-cyan-900);
+  line-height: 1.6;
+
+  @include breakpoint(medium) {
+    font-size: rem(16);
+  }
+
+  &--gray {
+    @extend .paragraph;
+    color: var(--color-gray-600);
+
+    @include breakpoint(medium) {
+      font-size: rem(20);
+    }
+  }
+
+  &--white {
+    @extend .paragraph;
+    font-weight: 400;
+    color: var(--color-blue-100);
+  }
+
+  &--lighter {
+    @extend .paragraph;
+    font-weight: 400;
+    color: var(--color-blue-100);
+  }
+}

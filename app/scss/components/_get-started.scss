@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+.get-started {
+  padding-inline: var(--container-padding-inline-md);
+  margin-block-start: rem(64);
+
+  @include breakpoint(medium) {
+    margin-block-start: rem(140);
+  }
+
+  .button--get-started {
+    margin-block-start: rem(38);
+  }
+}

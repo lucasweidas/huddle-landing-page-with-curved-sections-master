@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+.main {
+  &__container {
+    margin-block-start: rem(120);
+    text-align: center;
+
+    @include breakpoint(medium) {
+      margin-block-start: rem(170);
+    }
+
+    @include breakpoint(large) {
+      margin-block-start: rem(230);
+    }
+  }
+}

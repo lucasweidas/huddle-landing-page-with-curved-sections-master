@@ -1,0 +1,33 @@
+@use 'breakpoints' as *;
+
+@mixin breakpoint($size) {
+  @media screen and (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media screen and (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+
+@mixin pink-button {
+  width: var(--button-width);
+  height: var(--button-height);
+  background-color: var(--button-color);
+  font-size: var(--button-font-size);
+  font-weight: 600;
+  color: var(--color-blue-100);
+  border-radius: var(--button-border-radius);
+  transition: background-color var(--duration-1) ease;
+  @content;
+}
+
+@mixin wave-border {
+  background: var(--bg-top-url) top center / 100% var(--bg-top-height) border-box no-repeat,
+    var(--bg-bottom-url) bottom center / 100% var(--bg-bottom-height) border-box no-repeat, var(--bg-color) padding-box;
+  border-top: var(--bg-top-height) solid transparent;
+  border-bottom: var(--bg-bottom-height) solid transparent;
+  @content;
+}
